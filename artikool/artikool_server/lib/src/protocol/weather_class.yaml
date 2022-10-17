@@ -1,0 +1,3 @@
+class: WeatherInfo
+fields:
+  temparature: double

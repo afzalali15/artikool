@@ -1,0 +1,9 @@
+artikool:
+  - getArticles:
+  - addArticle:
+  - updateArticle:
+  - deleteArticle:
+example:
+  - hello:
+weather:
+  - getWeatherInfo:

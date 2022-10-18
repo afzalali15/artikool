@@ -11,27 +11,27 @@
 # Configuration for the main API server.
 apiServer:
   port: 8080
-  publicHost: api-staging.examplepod.com
+  publicHost: api-staging.codexdev.xyz
   publicPort: 443
   publicScheme: https
 
 # Configuration for the Insights server.
 insightsServer:
   port: 8081
-  publicHost: insights-staging.examplepod.com
+  publicHost: insights-staging.codexdev.xyz
   publicPort: 443
   publicScheme: https
 
 # Configuration for the web server.
 webServer:
   port: 8082
-  publicHost: app-staging.examplepod.com
+  publicHost: app-staging.codexdev.xyz
   publicPort: 443
   publicScheme: https
 
 # This is the database setup for your servers.
 database:
-  host: database.examplepod.com
+  host: database.codexdev.xyz
   port: 5432
   name: serverpod
   user: postgres
@@ -39,5 +39,5 @@ database:
 # This is the setup for Redis.
 redis:
   enabled: false
-  host: redis.examplepod.com
+  host: redis.codexdev.xyz
   port: 6379

@@ -27,7 +27,7 @@ enable_redis = false
 # us-east-1 region.
 hosted_zone_id             = "Z01435161FWFRY8SWSBUX"
 top_domain                 = "codexdev.xyz"
-certificate_arn            = "arn:aws:acm:ap-northeast-1:295774648737:certificate/8f3fcb1b-e4dd-4fcd-8b67-eb1bad6a1db8"
+certificate_arn            = "arn:aws:acm:us-west-2:295774648737:certificate/b5bd8556-1ef4-4e2a-90aa-08a6f3fd6b7c"
 cloudfront_certificate_arn = "arn:aws:acm:us-east-1:295774648737:certificate/f4667f51-a1ef-43af-8717-9af5c7161a54"
 
 # Subdomains for different services. Default values are recommended, but you

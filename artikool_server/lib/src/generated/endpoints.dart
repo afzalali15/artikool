@@ -10,6 +10,7 @@ import 'package:serverpod/serverpod.dart';
 
 import 'protocol.dart';
 
+import '../endpoints/api_endpoint.dart';
 import '../endpoints/artikool_endpoint.dart';
 import '../endpoints/example_endpoint.dart';
 import '../endpoints/weather_endpoint.dart';
@@ -18,10 +19,31 @@ class Endpoints extends EndpointDispatch {
   @override
   void initializeEndpoints(Server server) {
     var endpoints = <String, Endpoint>{
+      'api': ApiEndpoint()..initialize(server, 'api', null),
       'artikool': ArtikoolEndpoint()..initialize(server, 'artikool', null),
       'example': ExampleEndpoint()..initialize(server, 'example', null),
       'weather': WeatherEndpoint()..initialize(server, 'weather', null),
     };
+
+    connectors['api'] = EndpointConnector(
+      name: 'api',
+      endpoint: endpoints['api']!,
+      methodConnectors: {
+        'getDays': MethodConnector(
+          name: 'getDays',
+          params: {
+            'dob': ParameterDescription(
+                name: 'dob', type: DateTime, nullable: false),
+          },
+          call: (Session session, Map<String, dynamic> params) async {
+            return (endpoints['api'] as ApiEndpoint).getDays(
+              session,
+              params['dob'],
+            );
+          },
+        ),
+      },
+    );
 
     connectors['artikool'] = EndpointConnector(
       name: 'artikool',

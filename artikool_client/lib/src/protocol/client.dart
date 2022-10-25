@@ -11,6 +11,22 @@ import 'dart:typed_data' as typed_data;
 import 'package:serverpod_client/serverpod_client.dart';
 import 'protocol.dart';
 
+class _EndpointApi extends EndpointRef {
+  @override
+  String get name => 'api';
+
+  _EndpointApi(EndpointCaller caller) : super(caller);
+
+  Future<String> getDays(
+    DateTime dob,
+  ) async {
+    var retval = await caller.callServerEndpoint('api', 'getDays', 'String', {
+      'dob': dob,
+    });
+    return retval;
+  }
+}
+
 class _EndpointArtikool extends EndpointRef {
   @override
   String get name => 'artikool';
@@ -95,6 +111,7 @@ class _EndpointWeather extends EndpointRef {
 }
 
 class Client extends ServerpodClient {
+  late final _EndpointApi api;
   late final _EndpointArtikool artikool;
   late final _EndpointExample example;
   late final _EndpointWeather weather;
@@ -107,6 +124,7 @@ class Client extends ServerpodClient {
             context: context,
             errorHandler: errorHandler,
             authenticationKeyManager: authenticationKeyManager) {
+    api = _EndpointApi(this);
     artikool = _EndpointArtikool(this);
     example = _EndpointExample(this);
     weather = _EndpointWeather(this);
@@ -114,6 +132,7 @@ class Client extends ServerpodClient {
 
   @override
   Map<String, EndpointRef> get endpointRefLookup => {
+        'api': api,
         'artikool': artikool,
         'example': example,
         'weather': weather,

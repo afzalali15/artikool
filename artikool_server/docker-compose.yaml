@@ -18,5 +18,12 @@ services:
     command: redis-server --requirepass "ACXZib7KfQg7rmC4cQhy-2sADEVA9kBj"
     environment:
       - REDIS_REPLICATION_MODE=master
+  api:
+    image: testapi
+    ports:
+      - '8080:8080'
+    extra_hosts:
+    - 'host.docker.internal:host-gateway'
+    build: .
 volumes:
   artikool_data:

@@ -29,7 +29,7 @@ webServer:
 
 # This is the database setup for your server.
 database:
-  host: localhost
+  host: host.docker.internal
   port: 8090
   name: artikool
   user: postgres
@@ -37,5 +37,5 @@ database:
 # This is the setup for Redis.
 redis:
   enabled: false
-  host: localhost
+  host: host.docker.internal
   port: 8091

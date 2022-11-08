@@ -2,7 +2,7 @@ FROM dart
 WORKDIR /app
 
 COPY . .
-RUN chmod +x "/app/bin/main.dart -m development"
+RUN chmod +x "/app/bin/main.dart"
 ADD pubspec.* /app/
 RUN dart pub get
 ADD . /app

@@ -9,4 +9,4 @@ ADD . /app
 RUN dart pub get --offline
 
 # EXPOSE 8080
-ENTRYPOINT ["dart","/app/bin/main.dart -m staging"]
+ENTRYPOINT ["dart","/app/bin/main.dart"]

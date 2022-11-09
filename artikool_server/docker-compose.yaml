@@ -22,8 +22,9 @@ services:
     image: testapi
     ports:
       - '8080:8080'
-    extra_hosts:
-      - 'host.docker.internal:10.0.6.140'
+    network_mode: 'host'
+    # extra_hosts:
+    #   - 'host.docker.internal:10.0.6.140'
     build: .
 volumes:
   artikool_data:

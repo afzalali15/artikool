@@ -11,21 +11,21 @@
 # Configuration for the main API server.
 apiServer:
   port: 8080
-  publicHost: api-staging.codexdev.xyz
+  publicHost: 10.0.6.140
   publicPort: 443
   publicScheme: https
 
 # Configuration for the Insights server.
 insightsServer:
   port: 8081
-  publicHost: insights-staging.codexdev.xyz
+  publicHost: 10.0.6.140
   publicPort: 443
   publicScheme: https
 
 # Configuration for the web server.
 webServer:
   port: 8082
-  publicHost: app-staging.codexdev.xyz
+  publicHost: 10.0.6.140
   publicPort: 443
   publicScheme: https
 

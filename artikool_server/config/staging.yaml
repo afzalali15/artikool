@@ -31,7 +31,7 @@ webServer:
 
 # This is the database setup for your servers.
 database:
-  host: database.codexdev.xyz
+  host: 10.0.6.140
   port: 5432
   name: serverpod
   user: postgres
@@ -39,5 +39,5 @@ database:
 # This is the setup for Redis.
 redis:
   enabled: false
-  host: redis.codexdev.xyz
+  host: 10.0.6.140
   port: 6379
